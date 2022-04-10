@@ -1,4 +1,5 @@
 # DBTools
+Anyone is free to do whatever they want with code, yes, FREEDOM!<br>
 ```php
 <?php
 // include all libs
