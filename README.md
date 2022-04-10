@@ -24,8 +24,12 @@ class DBTbl_Test extends DBTBase {
 ## Warning
 ### Some functions may require `SQL::Esc`, or `SQL::BEsc`, or `SQL::TEsc`
 (B in `BEsc` stands for "binary" - TWO, T in `TEsc` stands for "trinary" - THREE)
-#### NOTE: Required for "WHERE" argument
-(eg: `Update` has `$aWhere`, requires SQLi protected string)
+```php
+DBTbl_Test::Update($aWhere);
+// $aWhere needs protection!
+DBTbl_Test::Update("id=".SQL::Esc("32"), "values are protected");
+```
+Other examples:
 ```php
 <?php
   // SQLi protect 1 variable!
