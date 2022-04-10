@@ -47,13 +47,13 @@ class DBTbl_Test extends DBTBase {
 // Upload to blob?
 // Note: it is advised that you first INSERT, then use this!
 // If you leave blobfield empty, it will assign for you automatically!
-DB_Test::UploadBlob($_FILES["filefield"], "", "id=32");
+DBTbl_Test::UploadBlob($_FILES["filefield"], "", "id=32");
 // Or if there's multiple blob fields in table:
-DB_Test::UploadBlob($_FILES["filefield"], "blob_field2", "id=32");
+DBTbl_Test::UploadBlob($_FILES["filefield"], "blob_field2", "id=32");
 // Upload blob string???
-DB_Test::UploadBlobString("long data...", "", "id=32");
+DBTbl_Test::UploadBlobString("long data...", "", "id=32");
 // Or if there's multiple blob fields in table:
-DB_Test::UploadBlobString("long data...", "blob_field2", "id=32");
+DBTbl_Test::UploadBlobString("long data...", "blob_field2", "id=32");
 
 // Let's say table "test" has columns in this order (must be correct order!)
 // field1, field2, field3)
