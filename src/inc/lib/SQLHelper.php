@@ -1,7 +1,11 @@
 <?php
 class SQL {
 	public static function _($aStr) {
-		return addslashes($aStr);
+		$aStr = addslashes($aStr);
+		$aStr = str_replace("\r", "\\r", $aStr);
+		$aStr = str_replace("\n", "\\n", $aStr);
+		$aStr = str_replace("\t", "\\t", $aStr);
+		return $aStr;
 	}
 	// binary(two) escape
 	public static function BEsc(&$vVal1, &$vVal2) {

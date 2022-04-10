@@ -5,6 +5,7 @@ class DBTBase {
 	// Register() is called at the end of file that contains the class that extends this class
 	// Example: class A extends DBTBase { static $Name, $Key, $DBIndex; } A::Register(0);
 	// if aDBIndex is -1, then DBIndex will be used- if DBIndex is valid range
+	// NOTE: it is NOT REQUIRED to call it if you set DBIndex in the class, Register will be called automatically
 	public static function Register(int $aDBIndex=-1, bool $aIgnoreColumns=true) {
 		$vCCName = get_called_class();
 		$vRC = new ReflectionClass($vCCName);
