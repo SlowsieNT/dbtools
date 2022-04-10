@@ -26,7 +26,7 @@ class DBTbl_Test extends DBTBase {
 ```php
 DBTbl_Test::Update($aWhere);
 // $aWhere needs protection!
-DBTbl_Test::Update("id=".SQL::Esc("32"), "values are protected");
+DBTbl_Test::Update("id='".SQL::Esc("32")."'", "values are protected");
 ```
 Other examples:
 ```php
