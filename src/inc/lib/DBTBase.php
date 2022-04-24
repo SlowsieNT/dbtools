@@ -154,13 +154,13 @@ class DBTBase {
 	}
 	// Insert Data, $aArray according to ORDER of columns in database!
 	// Returns id, or false
-	public static function Insert3(array $aArray) {
-		$vIData = self::GetIData($aArray, 0, $vTI);
+	public static function Insert3(array $aArray, $aOffset=0) {
+		$vIData = self::GetIData($aArray, $aOffset, $vTI);
 		return DBTProcessor::Insert($vTI[0], $vTI[1], $vIData);
 	}
 	// Update Where, all according to ORDER of columns in database!
 	// Returns number of affected rows, or false
-	public static function Update($aWhere) { return self::Update3($aWhere, array_slice(func_get_args(), 1)); }
+	public static function Update($aWhere) { return self::Update3($aWhere, func_get_args(), 1); }
 	// Update with Array
 	// Example $aData = array ("field" => "value", "field2" => "value2");
 	public static function Update2(array $aData, $aWhere="", $aUseCustomWhere=false) {
@@ -169,8 +169,8 @@ class DBTBase {
 	}
 	// Update Where, $aArray according to ORDER of columns in database!
 	// Returns number of affected rows, or false
-	public static function Update3($aWhere, array $aArray) {
-		$vIData = self::GetIData($aArray, 0, $vTI);
+	public static function Update3($aWhere, array $aArray, $aOffset=0) {
+		$vIData = self::GetIData($aArray, $aOffset, $vTI);
 		return DBTProcessor::Update($vTI[0], $vTI[1], $vIData, $aWhere);
 	}
 	// Update Custom Where, all according to ORDER of columns in database!
