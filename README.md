@@ -1,6 +1,6 @@
 # DBTools
-Anyone is free to do whatever they want with code, yes, FREEDOM!<br>
-#OpNoCopyright<br>
+## This is free and unencumbered software released into the public domain.
+### Secondary License: 0-BSD (if Unlicense not accepted)
 ```php
 <?php
 // include all libs
