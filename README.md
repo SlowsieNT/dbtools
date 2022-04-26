@@ -11,7 +11,7 @@ require_once "inc/db/tables/...";
 DB::NewConnect("dbname", null, "password");
 // only after NewConnect you are able to use tables
 
-// what if I don't want to use mysqli???
+// what if I don't want to use mysql???
 // then use NewDsnConnect
 DB::NewDsnConnect("sqlite:dir/mytest.db");
 ?>
