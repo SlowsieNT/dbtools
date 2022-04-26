@@ -9,7 +9,7 @@ require_once "inc/lib/all-libs.php";
 require_once "inc/db/tables/...";
 // if user is null (in this case), value "root" will be used (default: root)
 DB::NewConnect("dbname", null, "password");
-// only after NewConnect you are able to 
+// only after NewConnect you are able to use tables
 ?>
 ```
 
