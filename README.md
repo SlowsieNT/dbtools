@@ -76,6 +76,9 @@ DBTbl_Test::Insert2(array(
   "field1" => "a",
   "field3" => "c"
 ));
+// There is a way to insert with array
+DBTbl_Test::Insert3(array("a", "b", "c"));
+
 // Same applies for: Update, Update2, Delete, Delete2
 DBTbl_Test::Update("field1='a'", 'd', null, null);
 // Update2
@@ -83,6 +86,9 @@ DBTbl_Test::Update2(array(
   "field1" => "a",
   "field3" => "c"
 ), "field1='a'");
+// There is a way to update with array
+DBTbl_Test::Update3("field1='a'", array("a", "b", "c"));
+
 // Delete by $Key
 DBTbl_Test::Delete(11);
 // Delete by "WHERE"
