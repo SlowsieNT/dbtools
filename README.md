@@ -13,7 +13,7 @@ DB::NewConnect("dbname", null, "password");
 
 // what if I don't want to use mysqli???
 // then use NewDsnConnect
-DB::NewDsnConnect("sqlite:/mytest.db");
+DB::NewDsnConnect("sqlite:dir/mytest.db");
 ?>
 ```
 
