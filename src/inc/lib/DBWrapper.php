@@ -7,10 +7,12 @@ class DB {
 	static $m_ClassTableRegistered = false;
 	static $m_ClassTableContains = "DBTbl_";
 	// Returns index
-	public static function NewConnect($aName="", $aUser="root", $aPass="", $aHost="localhost") {
-		if (null === $aUser)
-			$aUser = "root";
-		self::$m_DBs[] = new PDO("mysql:host=$aHost;dbname=$aName", $aUser, $aPass);
+	public static function NewConnect($aName="", $aUser="root", $aPass="", $aHost="localhost", $aOptions=null) {
+		if (null === $aUser) $aUser = "root";
+		return self::NewDsnConnect("mysql:host=$aHost;dbname=$aName;charset=utf8mb4", $aUser, $aPass, $aOptions);
+	}
+	public static function NewDsnConnect(string $aDSN, $aUser="root", $aPass="", $aOptions=null) {
+		self::$m_DBs[] = new PDO($aDSN, $aUser, $aPass, $aOptions);
 		return -1 + count(self::$m_DBs);
 	}
 	static function HandleAutoRegister() {
